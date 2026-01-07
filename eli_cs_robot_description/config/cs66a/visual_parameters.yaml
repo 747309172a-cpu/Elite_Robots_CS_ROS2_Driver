@@ -4,7 +4,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/base.stl
+        path: meshes/cs66a/visual/base.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -17,7 +17,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/shoulder.stl
+        path: meshes/cs66a/visual/shoulder.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -30,7 +30,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/upperarm.stl
+        path: meshes/cs66a/visual/upperarm.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -43,7 +43,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/forearm.stl
+        path: meshes/cs66a/visual/forearm.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -56,7 +56,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/wrist1.stl
+        path: meshes/cs66a/visual/wrist1.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -69,7 +69,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/wrist2.stl
+        path: meshes/cs66a/visual/wrist2.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
@@ -82,7 +82,7 @@ mesh_files:
     visual:
       mesh:
         package: eli_cs_robot_description
-        path: meshes/cs66a/visual/wrist3.stl
+        path: meshes/cs66a/visual/wrist3.dae
       material:
         name: "LightGrey"
         color: "0.35 0.7 1.0 1.0"
