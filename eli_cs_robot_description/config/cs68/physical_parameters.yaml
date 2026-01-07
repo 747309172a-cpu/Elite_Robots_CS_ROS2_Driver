@@ -6,7 +6,7 @@ dh_parameters:
   a3: -0.3715
   d4: 0.1345
   d5: 0.0965
-  d6: 0.0920
+  d6: 0.0950
 
 inertia_parameters:
   base_mass: 0.57127  # base mass, base inertia, base cog might be incorrect
