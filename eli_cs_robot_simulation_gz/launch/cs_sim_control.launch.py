@@ -26,10 +26,26 @@ def launch_setup(context, *args, **kwargs):
     controllers_file = LaunchConfiguration("controllers_file")
     description_package = LaunchConfiguration("description_package")
     description_file = LaunchConfiguration("description_file")
+    initial_positions_file_arg = LaunchConfiguration("initial_positions_file")
     prefix = LaunchConfiguration("prefix")
     start_joint_controller = LaunchConfiguration("start_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
     launch_rviz = LaunchConfiguration("launch_rviz")
+
+    cs_type_value = cs_type.perform(context)
+    initial_positions_file_value = initial_positions_file_arg.perform(context)
+    description_package_value = description_package.perform(context)
+    if initial_positions_file_value:
+        initial_positions_file = initial_positions_file_value
+    else:
+        file_name = (
+            "initial_positions_a_type.yaml"
+            if "a" in cs_type_value
+            else "initial_positions.yaml"
+        )
+        initial_positions_file = PathJoinSubstitution(
+            [FindPackageShare(description_package_value), "config", file_name]
+        )
 
     initial_joint_controllers = PathJoinSubstitution(
         [FindPackageShare(runtime_config_package), "config", controllers_file]
@@ -69,6 +85,9 @@ def launch_setup(context, *args, **kwargs):
             " ",
             "simulation_controllers:=",
             initial_joint_controllers,
+            " ",
+            "initial_positions_file:=",
+            initial_positions_file,
         ]
     )
     robot_description = {"robot_description": robot_description_content}
@@ -214,6 +233,13 @@ def generate_launch_description():
             "description_file",
             default_value="cs.urdf.xacro",
             description="URDF/XACRO description file with the robot.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "initial_positions_file",
+            default_value="",
+            description='Override initial positions YAML. If empty, models with "a" use initial_positions_a_type.yaml.',
         )
     )
     declared_arguments.append(
